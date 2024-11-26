@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Pedido de Comida</title>
+    <link rel="stylesheet" href="./estilos/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pedido de Comida</h1>
+        
+        <!-- Formulario para el pedido de comida -->
+        <form id="formularioPedido">
+            <!-- Datos personales -->
+            <div class="form-section">
+                <h2>Datos Personales</h2>
+                <div class="input-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu Nombre" required>
+                </div>
+                <div class="input-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu Apellido" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Ingresa tu Email" required>
+                </div>
+                <div class="input-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ingresa tu Teléfono" required>
+                </div>
+                <div class="input-group">
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion" placeholder="Ingresa tu Dirección" required>
+                </div>
+            </div>
+
+            <!-- Métodos de pago -->
+            <div class="form-section">
+                <h2>Método de Pago</h2>
+                <div class="input-group">
+                    <label for="metodoPago">Selecciona un Método de Pago:</label>
+                    <select id="metodoPago" name="metodoPago" required>
+                        <option value="">Elige un método de pago</option>
+                        <option value="tarjeta">Tarjeta de Crédito/Débito</option>
+                        <option value="nequi">Nequi</option>
+                        <option value="efectivo">Efectivo</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Productos -->
+            <div class="producto">
+                <img src="../Pizza1.jfif" alt="Pizza" class="producto-imagen">
+                <h2>Pizza </h2>
+                <label for="pizzaCantidad">Cantidad:</label>
+                <input type="number" id="pizzaCantidad" name="pizzaCantidad" min="0" value="0" onchange="actualizarCesta()">
+                <p class="precio" id="pizzaPrecio">$20.000</p>
+            </div>
+
+            <div class="producto">
+                <img src="../imagenes/Hamburguesa.jfif" alt="Burger" class="producto-imagen">
+                <h2>Hamburguesa</h2>
+                <label for="burgerCantidad">Cantidad:</label>
+                <input type="number" id="burgerCantidad" name="burgerCantidad" min="0" value="0" onchange="actualizarCesta()">
+                <p class="precio" id="burgerPrecio">$12.000</p>
+            </div>
+
+            <div class="producto">
+                <img src="../imagenes/Sushi.jpg" alt="Sushi" class="producto-imagen">
+                <h2>Sushi</h2>
+                <label for="sushiCantidad">Cantidad:</label>
+                <input type="number" id="sushiCantidad" name="sushiCantidad" min="0" value="0" onchange="actualizarCesta()">
+                <p class="precio" id="sushiPrecio">$18.000</p>
+            </div>
+
+            <!-- Cesta de productos -->
+            <div class="cesta">
+                <h3>Cesta de Productos</h3>
+                <p id="cestaContenido">No has agregado productos aún.</p>
+                <p><strong>Total: $<span id="totalCesta">00.000</span></strong></p>
+            </div>
+
+            <!-- Botón de envío -->
+            <button type="submit" class="submit-btn">Realizar Pedido</button>
+        </form>
+    </div>
+
+</body>
+</html>
